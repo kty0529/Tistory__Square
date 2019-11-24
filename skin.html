@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko" class="default">
+<head>
+	<title>[##_page_title_##]</title>
+
+	<meta charset="utf-8">
+	<meta name="title" content="[##_page_title_##]">
+	<meta name="description" Content="[##_desc_##]">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0">
+
+	<link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]">
+	<link rel="shortcut icon" href="[##_blog_link_##]favicon.ico">
+
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<script>
+	// 추가 단축키
+	var key = new Array();
+		key['w'] = "/admin/entry/post/";
+		key['r'] = "/admin/plugin/refererUrlLog/";
+		key['h'] = "/";
+
+	var images = './images/';
+	</script>
+</head>
+
+<body id="[##_body_id_##]">
+
+	<s_t3>
+		<div id="wrap">
+			<!--
+				분류 전체보기 숨기기 : hide-all-category
+				위젯 제목 숨기기 : hide-widget-title
+
+				아래 빈 class="" 부분에 추가하면 됩니다.
+				두 기능을 모두 사용하려면 띄어쓰기로 구분하면 됩니다.
+
+				예) class="hide-all-category hide-widget-title"
+			-->
+			<div id="sidebar" class="">
+				<div class="blank"></div>
+
+				<h1><a href="[##_blog_link_##]">[##_title_##]</a></h1>
+
+				<s_sidebar>
+					<s_sidebar_element>
+						<div class="widget"> <!-- Blog Menu -->
+							<h3>Menu</h3>
+							[##_blog_menu_##]
+						</div>
+					</s_sidebar_element>
+
+					<s_sidebar_element>
+						<div class="widget category"> <!-- Category -->
+							<h3>Category</h3>
+							[##_category_list_##]
+						</div>
+					</s_sidebar_element>
+
+					<s_sidebar_element> <!-- Notice -->
+						<s_rct_notice>
+							<div class="widget">
+								<h3>Notice</h3>
+								<ul>
+									<s_rct_notice_rep><li class="ellipsis"><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></li></s_rct_notice_rep>
+								</ul>
+							</div>
+						</s_rct_notice>
+					</s_sidebar_element>
+
+					<s_sidebar_element>
+						<div class="widget"> <!-- Recent Comments -->
+							<h3>Recent comments</h3>
+							<ul id="recentComments">
+								<s_rctrp_rep><li class="ellipsis"><a href="[##_rctrp_rep_link_##]" title="[##_rctrp_rep_name_##]〃[##_rctrp_rep_time_##]">[##_rctrp_rep_desc_##]</a></li></s_rctrp_rep>
+							</ul>
+						</div>
+					</s_sidebar_element>
+
+					<s_sidebar_element> <!-- Links -->
+						<div class="widget">
+							<h3>Links</h3>
+							<ul>
+								<s_link_rep><li class="ellipsis"><a href="[##_link_url_##]" target="_blank">[##_link_site_##]</a></li></s_link_rep>
+							</ul>
+						</div>
+					</s_sidebar_element>
+
+					<s_sidebar_element> <!-- Counter -->
+						<div class="widget counter">
+							<span class="item yesterday" data-tooltip="어제">[##_count_yesterday_##]</span> /
+							<span class="item today" data-tooltip="오늘">[##_count_today_##]</span> /
+							<span class="item total" data-tooltip="전체">[##_count_total_##]</span>
+						</div>
+					</s_sidebar_element>
+
+					<s_sidebar_element> <!-- Search -->
+						<div class="widget search">
+							<s_search>
+							<input class="search" placeholder="press enter to search…" type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+							</s_search>
+						</div>
+					</s_sidebar_element>
+				</s_sidebar>
+
+				<div class="blank"></div>
+			</div>
+
+			<div id="content">
+				<div id="content-inner">
+
+					<s_tag>
+						<div class="head">
+							<h2>Tag</h2>
+						</div>
+
+						<div class="body tag">
+							<s_tag_rep><a href="[##_tag_link_##]" class="[##_tag_class_##]">#[##_tag_name_##]</a></s_tag_rep>
+						</div>
+					</s_tag>
+
+					<s_local>
+						<div class="head">
+							<h2>Local</h2>
+						</div>
+
+						<div class="body local">
+							<s_local_spot_rep><div class="spot" style="margin-left: [##_local_spot_depth_##]px">[##_local_spot_##]</div></s_local_spot_rep>
+							<s_local_info_rep><div class="info" style="margin-left: [##_local_info_depth_##]px"><a href="[##_local_info_link_##]">[##_local_info_title_##]</a></div></s_local_info_rep>
+						</div>
+					</s_local>
+
+					<s_list>
+						<div class="head">
+							<h2>[##_list_conform_##]</h2>
+						</div>
+
+						<div class="body list">
+							<ul>
+								<s_list_rep>
+								<li>
+									<div class="list-inner">
+										<a class="item" href="[##_list_rep_link_##]">[##_list_rep_title_##]</a>
+										<div class="item cnt">[##_list_rep_rp_cnt_##]</div>
+										<div class="item date">[##_list_rep_regdate_##]</div>
+									</div>
+								</li>
+								</s_list_rep>
+							</ul>
+						</div>
+					</s_list>
+
+					<s_notice_rep>
+						<div class="head">
+							<h2><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h2>
+							<div class="head-date">[##_notice_rep_date_##]</div>
+						</div>
+
+						<div class="body entry">
+							<div class="tag_label">
+							<s_tag_label>
+								<span>[##_tag_label_rep_##]</span>
+								<div class="clear"></div>
+							</s_tag_label>
+							</div>
+
+							<div class="article">
+							[##_notice_rep_desc_##]
+							</div>
+						</div>
+					</s_notice_rep>
+
+					<s_article_protected>
+						<div class="head">
+							<h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
+							<div class="head-date">[##_article_rep_date_##]</div>
+						</div>
+
+						<div class="body entry protected">
+							<p><i class="fa fa-unlock-alt"></i></p>
+							<p><input type="password" maxlength="30" id="[##_article_password_##]" name="[##_article_password_##]" value="" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]"></p>
+							<p><input type="button" class="submit" value="Unlock" onclick="[##_article_dissolve_##]"></p>
+						</div>
+					</s_article_protected>
+
+					<s_article_rep>
+						<div class="head">
+							<h2><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h2>
+							<div class="head-date">[##_article_rep_date_##]</div>
+						</div>
+
+						<div class="body entry">
+							<div class="tag_label">
+							<s_tag_label>
+								<span>[##_tag_label_rep_##]</span>
+								<div class="clear"></div>
+							</s_tag_label>
+							</div>
+
+							<div class="article">
+							[##_article_rep_desc_##]
+							</div>
+
+							<s_ad_div>
+							<div class="admin">
+								<a href="[##_s_ad_m_link_##]">Modify</a>
+								<span class="line">|</span>
+								<a href="#" onclick="[##_s_ad_d_onclick_##]">Delete</a>
+							</div>
+							</s_ad_div>
+
+							<s_rp>
+								<div id="communicate">
+									<s_rp_input_form>
+										<div class="communicateWrite">
+											<s_rp_member>
+												<s_rp_guest>
+													<div class="name guest">
+														<label for="name">NAME</label>
+														<input id="name" type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]">
+													</div>
+													<div class="password guest">
+														<label for="password">PASSWORD</label>
+														<input id="password" type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]">
+													</div>
+													<div class="homepage guest">
+														<label for="homepage">HOMEPAGE</label>
+														<input id="homepage" type="text" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]">
+													</div>
+												</s_rp_guest>
+											</s_rp_member>
+											<div class="textarea"><textarea name="[##_rp_input_comment_##]" rows="10" cols="50"></textarea></div>
+											<div class="buttons">
+												<div class="secret">
+													<label>
+														<span>SECRET</span>
+														<input type="checkbox" name="secret">
+													</label>
+												</div>
+												<div class="submit">
+													<input type="submit" value="WRITE" onclick="[##_rp_onclick_submit_##]">
+												</div>
+											</div>
+
+											<div class="clear"></div>
+										</div>
+									</s_rp_input_form>
+
+									<s_rp_container>
+										<div class="communicateList">
+										<ol>
+											<s_rp_rep>
+												<li id='[##_rp_rep_id_##]'>
+													<div class="[##_rp_rep_class_##]">
+														<div class="info">
+															<span class="name">[##_rp_rep_name_##]</span>
+															<span class="date">[##_rp_rep_date_##]</span>
+														</div>
+														<div class="clear"></div>
+														<p>[##_rp_rep_desc_##]</p>
+														<div class="control">
+															<a href="[##_rp_rep_link_##]" class="url">URL</a>
+															<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">Delete</a>
+															<a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write">Reply</a>
+															<div class="clear"></div>
+														</div>
+													</div>
+													<s_rp2_container>
+														<ul>
+															<s_rp2_rep>
+																<li id='[##_rp_rep_id_##]'>
+																	<div class="[##_rp_rep_class_##]">
+																		<div class="info">
+																			<span class="name">[##_rp_rep_name_##]</span>
+																			<span class="date">[##_rp_rep_date_##]</span>
+																		</div>
+																		<div class="clear"></div>
+																		<p>[##_rp_rep_desc_##]</p>
+																		<div class="control">
+																			<a href="[##_rp_rep_link_##]" class="url">URL</a>
+																			<a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify">Delete</a>
+																		</div>
+																	</div>
+																</li>
+															</s_rp2_rep>
+														</ul>
+													</s_rp2_container>
+												</li>
+											</s_rp_rep>
+										</ol>
+										</div>
+									</s_rp_container>
+								</div>
+							</s_rp>
+						</div>
+					</s_article_rep>
+
+					<s_guest>
+						<div class="head">
+							<h2>Guestbook</h2>
+						</div>
+
+						<div class="body entry">
+							<div id="communicate">
+								<s_guest_input_form>
+									<div class="communicateWrite">
+										<s_guest_member>
+											<s_guest_form>
+												<div class="name guest no-margin">
+													<label for="name">NAME</label>
+													<input id="name" type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]">
+												</div>
+												<div class="password guest">
+													<label for="password">PASSWORD</label>
+													<input id="password" type="password" maxlength="8" name="[##_guest_input_password_##]" value="[##_guest_password_##]">
+												</div>
+												<div class="homepage guest">
+													<label for="homepage">HOMEPAGE</label>
+													<input id="homepage" type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]">
+												</div>
+											</s_guest_form>
+										</s_guest_member>
+										<div class="textarea"><textarea name="[##_guest_textarea_body_##]" cols="50" rows="6"></textarea></div>
+										<div class="buttons">
+											<div class="secret">
+												<label>
+													<span>SECRET</span>
+													<input type="checkbox" name="secret">
+												</label>
+											</div>
+											<div class="submit">
+												<input type="submit" value="WRITE" onclick="[##_guest_onclick_submit_##]">
+											</div>
+										</div>
+
+										<div class="clear"></div>
+									</div>
+								</s_guest_input_form>
+
+								<s_guest_container>
+									<div class="communicateList">
+										<ol>
+											<s_guest_rep>
+												<li id='[##_guest_rep_id_##]'>
+													<div class="[##_guest_rep_class_##]">
+														<div class="info">
+															<span class="name">[##_guest_rep_name_##]</span>
+															<span class="date">[##_guest_rep_date_##]</span>
+														</div>
+														<div class="clear"></div>
+														<p>[##_guest_rep_desc_##]</p>
+														<div class="control">
+															<a href="#[##_guest_rep_id_##]" class="url">URL</a>
+															<a href="#" onclick="[##_guest_rep_onclick_delete_##]">Delete</a>
+															<a href="#" onclick="[##_guest_rep_onclick_reply_##]">Reply</a>
+														</div>
+													</div>
+													<s_guest_reply_container>
+														<ul>
+															<s_guest_reply_rep>
+																<li id='[##_guest_rep_id_##]'>
+																	<div class="[##_guest_rep_class_##]">
+																		<div class="info">
+																			<span class="name">[##_guest_rep_name_##]</span>
+																			<span class="date">[##_guest_rep_date_##]</span>
+																		</div>
+																		<div class="clear"></div>
+																		<p>[##_guest_rep_desc_##]</p>
+																		<div class="control">
+																			<a href="#[##_guest_rep_id_##]" class="url">URL</a>
+																			<a href="#" onclick="[##_guest_rep_onclick_delete_##]">Delete</a>
+																		</div>
+																	</div>
+																</li>
+															</s_guest_reply_rep>
+														</ul>
+													</s_guest_reply_container>
+												</li>
+											</s_guest_rep>
+										</ol>
+									</div>
+								</s_guest_container>
+							</div>
+						</div>
+					</s_guest>
+
+					<div id="paging">
+						<s_paging>
+							<a [##_prev_page_##] class="prev [##_no_more_prev_##]">PREV</a>
+							<s_paging_rep><a class="numbox" [##_paging_rep_link_##]>[##_paging_rep_link_num_##]</a></s_paging_rep>
+							<a [##_next_page_##] class="next [##_no_more_next_##]">NEXT</a>
+						</s_paging>
+					</div>
+
+					<s_sidebar_element>
+						<div id="recent-post">
+							<h4><a href="/category">+ Recent posts</a></h4>
+							<ul>
+								<s_rctps_rep>
+									<li class="box">
+										<a href="[##_rctps_rep_link_##]" class="thumb">
+											<img src="./images/blank.png" alt="post image">
+											<div class="title">
+												<div class="title-inner">[##_rctps_rep_title_##]</div>
+											</div>
+										</a>
+									</li>
+								</s_rctps_rep>
+							</ul>
+						</div>
+					</s_sidebar_element>
+
+					<div class="clear"></div>
+
+					<div id="foot">
+						<div class="powered">Powered by <a href="http://www.tistory.com/" target="_blank">Tistory</a>, Designed by <a href="http://wallel.com/" target="_blank">wallel</a></div>
+						<div class="social">
+							<a href="[##_rss_url_##]" target="_blank">Rss Feed</a> and
+							<a href="https://www.twitter.com/" target="_blank">Twitter</a>,
+							<a href="https://www.facebook.com/" target="_blank">Facebook</a>,
+							<a href="https://www.youtube.com/" target="_blank">Youtube</a>,
+							<a href="https://plus.google.com/" target="_blank">Google+</a>
+						</div>
+					</div>
+				</div> <!-- content-inner close -->
+			</div> <!-- content close -->
+		</div>
+	</s_t3>
+
+	<div id="sidebar-toggle" onclick="javascript:sidebar_toggle();"><i class="fa fa-bars"></i></div>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="./images/common.js"></script>
+
+</body>
+</html>
