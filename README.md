@@ -30,7 +30,11 @@
 - Opera
 - Safari
 
-##라이센스
+## 다운로드
+저장소 우측 상단의 초록색 버튼 Clone or download 를 누른 후 Download ZIP 을 누르면 압축파일을 받을 수 있습니다.
+스킨 업로드 시 README.md 파일은 업로드 하지 않으셔도 됩니다.
+
+## 라이센스
 1. Designed by wallel 표기는 삭제/변형/숨길 수 없습니다.
 	- 저작권자 표기를 제거를 희망하실 경우 [이곳](https://themebrew.io/product/square-license/) 에서 라이센스를 구매해주세요.
 2. 디자인을 수정하여 디자인 수정자 표기를 원하는 경우 저작자와 협의합니다.
