@@ -1,15 +1,15 @@
 # Square - Tistory
 
 가장 기본이 되는 2단 스킨에 불필요한 기능은 제거하여 더 가볍게 제작했습니다.
-
 [※ 티스토리 반응형웹 스킨 공모전 대상 수상](https://notice.tistory.com/2256)
 
 ## 기본정보
 - 제작일: 2015-08-15
 - 데모 블로그: https://square.ts.wallel.com/
+- 다운로드 : https://github.com/kty0529/Tistory__Square/releases/tag/1.1.1
 - 반응형웹 지원
 
-## 지원 위젯
+## 위젯
 1. 메뉴
 2. 카테고리
 3. 링크
@@ -18,7 +18,7 @@
 6. 방문자 카운터
 7. 검색
 
-## 지원 페이지
+## 페이지
 1. 방명록
 2. 태그 클라우드
 3. 위지 로그
@@ -29,10 +29,6 @@
 - Internet Explorer 9+
 - Opera
 - Safari
-
-## 다운로드
-저장소 우측 상단의 초록색 버튼 Clone or download 를 누른 후 Download ZIP 을 누르면 압축파일을 받을 수 있습니다.
-스킨 업로드 시 README.md 파일은 업로드 하지 않으셔도 됩니다.
 
 ## 라이센스
 1. Designed by wallel 표기는 삭제/변형/숨길 수 없습니다.
